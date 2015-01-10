@@ -260,13 +260,23 @@ static struct mtd_partition mini2440_default_nand_part[] __initdata = {
 		.name	= "kernel",
 		/* 5 megabytes, for a kernel with no modules
 		 * or a uImage with a ramdisk attached */
-		.size	= 0x00500000,
+		.size	= SZ_4M + SZ_1M,
 		.offset	= SZ_256K + SZ_128K,
 	},
 	[3] = {
-		.name	= "root",
-		.offset	= SZ_256K + SZ_128K + 0x00500000,
+		.name	= "system",
+		.size	= SZ_32M - SZ_2M,
+		.offset	= SZ_4M + SZ_1M + SZ_256K + SZ_128K,
+	},
+	[4] = {
+		.name	= "cache",
+		.size	= SZ_8M + SZ_2M,
+		.offset	= SZ_32M + SZ_2M + SZ_1M + SZ_256K + SZ_128K,
+	},
+	[5] = {
+		.name	= "userdata",
 		.size	= MTDPART_SIZ_FULL,
+		.offset	= SZ_32M + SZ_8M + SZ_4M + SZ_1M + SZ_256K + SZ_128K,
 	},
 };
 
