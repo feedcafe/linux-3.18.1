@@ -102,6 +102,7 @@ static struct s3c2410_uartcfg mini2440_uartcfgs[] __initdata = {
 
 static struct s3c2410_udc_mach_info mini2440_udc_cfg __initdata = {
 	.pullup_pin = S3C2410_GPC(5),
+	.pullup_pin_inverted = 1,
 };
 
 
