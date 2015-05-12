@@ -2,3 +2,4 @@
 make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- mini2440_defconfig
 make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- uImage
 fastboot boot arch/arm/boot/uImage
+# make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- modules
